@@ -1,8 +1,4 @@
-#### #### #  # #   # #### #   #
-#    #  # # ## # # # ####  ###
-#### #### #  # ## ## #  #   #
-
-# README #
+# CONWAY'S BACK-END README #
 
 This back-end is using rails with active record and psql.
 Important, additional gems includes Devise and Doorkeeper.
