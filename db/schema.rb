@@ -56,9 +56,8 @@ ActiveRecord::Schema.define(version: 2018_07_28_211347) do
   create_table "recs", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "rating", default: 0
-    t.integer "latitude", null: false
-    t.integer "longitude", null: false
+    t.integer "latitude"
+    t.integer "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
