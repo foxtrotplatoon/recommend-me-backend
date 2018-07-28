@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_211347) do
+ActiveRecord::Schema.define(version: 2018_07_28_220729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment_text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "oauth_access_grants", id: :serial, force: :cascade do |t|
     t.integer "resource_owner_id", null: false
@@ -53,11 +59,22 @@ ActiveRecord::Schema.define(version: 2018_07_28_211347) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "score", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recs", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
     t.integer "latitude"
     t.integer "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suggestions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
