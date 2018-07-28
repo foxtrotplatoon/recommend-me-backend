@@ -9,12 +9,11 @@ Doorkeeper.configure do
   resource_owner_authenticator do
     fail "Please configure doorkeeper resource_owner_authenticator block located in #{__FILE__}"
     # Put your resource owner authentication logic here.
-    # Example implementation:
-    #   User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
+    User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
   end
 
   resource_owner_from_credentials do |routes|
-    user = User.find_for_database_authentication(:username => params[:username])
+    user = User.find_for_database_authentication(:email => params[:email])
     if user && user.valid_for_authentication? { user.valid_password?(params[:password]) }
       user
     end
@@ -32,7 +31,7 @@ Doorkeeper.configure do
 
   # Access token expiration time (default 2 hours).
   # If you want to disable expiration, set this to nil.
-  access_token_expires_in 2.days
+  access_token_expires_in nil
 
   # Assign a custom TTL for implicit grants.
   # custom_access_token_expires_in do |oauth_client|
