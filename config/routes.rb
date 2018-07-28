@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
                registrations: 'users/registrations',
              }, skip: [:sessions, :password], defaults: { format: :json }
+
+  resources :recs
 end
