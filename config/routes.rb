@@ -9,5 +9,5 @@ Rails.application.routes.draw do
                registrations: 'users/registrations',
              }, skip: [:sessions, :password], defaults: { format: :json }
 
-  resources :recs
+  resources :recs, :comments, :suggestions, :ratings
 end
