@@ -8,6 +8,7 @@ class CreateRecs < ActiveRecord::Migration[5.2]
       #created from google maps api in sub page (optional)
       t.integer :latitude
       t.integer :longitude
+      
 
       t.timestamps
     end
