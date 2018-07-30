@@ -11,5 +11,4 @@ Rails.application.routes.draw do
 
   resources :recs, :comments, :suggestions, :ratings
 
-  ##comment for heroku
 end
