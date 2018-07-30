@@ -5,7 +5,7 @@ class RecsController < ApplicationController
 
   private
 
-  def set_rec
+  def set_var
     @rec = Rec.find(params[:id])
   end
 end
