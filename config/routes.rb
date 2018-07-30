@@ -10,4 +10,6 @@ Rails.application.routes.draw do
              }, skip: [:sessions, :password], defaults: { format: :json }
 
   resources :recs, :comments, :suggestions, :ratings
+
+  ##comment for heroku
 end
