@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment_text", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -64,15 +66,16 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "score", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "reccs", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "latitude"
-    t.integer "longitude"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

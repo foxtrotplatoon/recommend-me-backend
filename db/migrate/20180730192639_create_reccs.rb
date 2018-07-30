@@ -3,9 +3,7 @@ class CreateReccs < ActiveRecord::Migration[5.2]
     create_table :reccs do |t|
       t.string :name, null: false
       t.text :description, null: false
-
-      t.integer :latitude
-      t.integer :longitude
+      t.string :location
 
       t.timestamps
     end

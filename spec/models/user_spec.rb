@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   let (:valid_user_params) {
-    { first_name: "testboy", last_name: "testington", birthdate: "18/05/1989", email: "testboy@test.com", password: "testtest" }
+    { first_name: "testboy", last_name: "testington", birthdate: "18/05/1989", email: "testboy@test.com", password: "testtest"
+    }
   }
 
   let (:bad_user_params) {
