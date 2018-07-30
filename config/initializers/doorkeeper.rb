@@ -12,6 +12,14 @@ Doorkeeper.configure do
     # User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
   end
 
+  # In this flow, a token is requested in exchange for the resource owner credentials (username and password)
+  resource_owner_from_credentials do |routes|
+    user = User.find_for_database_authentication(:email => params[:email])
+    if user && user.valid_for_authentication? { user.valid_password?(params[:password]) }
+      user
+    end
+  end
+
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
   # admin_authenticator do
   #   # Put your admin authentication logic here.
@@ -116,7 +124,7 @@ Doorkeeper.configure do
   #   http://tools.ietf.org/html/rfc6819#section-4.4.2
   #   http://tools.ietf.org/html/rfc6819#section-4.4.3
   #
-  # grant_flows %w[authorization_code client_credentials]
+  grant_flows %w(password)
 
   # Hook into the strategies' request & response life-cycle in case your
   # application needs advanced customization or logging:
@@ -135,6 +143,10 @@ Doorkeeper.configure do
   # skip_authorization do |resource_owner, client|
   #   client.superapp? or resource_owner.admin?
   # end
+  skip_authorization do
+    true
+  end
+
 
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
