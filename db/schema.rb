@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
     t.string "location"
     t.bigint "user_id"
     t.integer "rating_id"
+    t.integer "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reccs_on_user_id"
