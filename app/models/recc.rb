@@ -7,3 +7,4 @@ class Recc < ApplicationRecord
   has_many :comments
   has_many :recipients, class_name: :User, foreign_key: "user_id"
 end
+

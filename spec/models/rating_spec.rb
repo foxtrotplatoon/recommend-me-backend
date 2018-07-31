@@ -4,8 +4,10 @@ RSpec.describe Rating, type: :model do
 
   let (:user) { User.create!(first_name: "testboy", last_name: "testington", birthdate: "18/05/1989", email: "testboy@test.com", password: "testtest") }
 
+  let (:recc) { Recc.create!(name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: user) }
+
   let (:valid_rating_params) {
-    { score: 3, user: user }
+    { score: 3, user: user, recc: recc  }
   }
 
   let (:bad_rating_params_not_int) {
