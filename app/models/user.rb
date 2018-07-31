@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reccs
-  has_many :suggestions, class_name: :Recc
   has_many :ratings
   has_many :comments
 end
