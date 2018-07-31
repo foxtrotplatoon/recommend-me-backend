@@ -7,7 +7,7 @@ RSpec.describe Rating, type: :model do
   let (:recc) { Recc.create!(name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: user) }
 
   let (:valid_rating_params) {
-    { score: 3, user: user, recc: recc  }
+    { score: 3, user: user, recc_id: recc.id  }
   }
 
   let (:bad_rating_params_not_int) {

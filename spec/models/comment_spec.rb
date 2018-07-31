@@ -7,7 +7,7 @@ RSpec.describe Comment, type: :model do
   let (:recc) { Recc.create!(name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: user) }
 
   let (:valid_comment_params) {
-    { comment_text: "This is a comment.", user: user, recc: recc }
+    { comment_text: "This is a comment.", user: user, recc_id: recc.id }
   }
 
   let (:bad_comment_params_blank) {
