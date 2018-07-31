@@ -4,7 +4,7 @@ class CreateRatings < ActiveRecord::Migration[5.2]
       t.integer :score, null: false
 
       t.belongs_to :user, index: true
-      t.references :recc, index: true
+      t.references :recc, index: true, foreign_key: true
       t.timestamps
     end
   end
