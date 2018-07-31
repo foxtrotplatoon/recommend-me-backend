@@ -2,16 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Recc, type: :model do
 
+  let (:owner) { User.create!(first_name: "testboy", last_name: "testington", birthdate: "18/05/1989", email: "testboy@test.com", password: "testtest") }
+
   let (:valid_recc_params) {
-    { name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078"}
+    { name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: owner }
   }
 
   let (:valid_recc_params_no_loc) {
-    { name: "Weird Tree", description: "Come check out this weird tree"}
+    { name: "Weird Tree", description: "Come check out this weird tree", owner: owner }
   }
 
   let (:bad_recc_params) {
-    { name: "Guh", description: ""}
+    { name: "Guh", description: "", owner: owner }
   }
 
   describe ":: Create New Recc ::" do

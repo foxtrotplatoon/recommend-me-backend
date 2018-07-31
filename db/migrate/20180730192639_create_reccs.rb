@@ -5,6 +5,7 @@ class CreateReccs < ActiveRecord::Migration[5.2]
       t.text :description, null: false
       t.string :location
 
+      t.references :user, index: true, foreign_key: true
       t.timestamps
     end
   end

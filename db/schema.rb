@@ -76,8 +76,10 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
     t.string "name", null: false
     t.text "description", null: false
     t.string "location"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reccs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,4 +104,5 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
 
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "reccs", "users"
 end
