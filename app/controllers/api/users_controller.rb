@@ -1,5 +1,5 @@
 class Api::UsersController < ApiController
   def sync
-    render json: current_resource_owner, status: 200
+    render json: current_resource_owner.reccs, status: 200
   end
 end

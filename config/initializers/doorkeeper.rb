@@ -83,7 +83,7 @@ Doorkeeper.configure do
   # falls back to the `:access_token` or `:bearer_token` params from the `params` object.
   # Check out https://github.com/doorkeeper-gem/doorkeeper/wiki/Changing-how-clients-are-authenticated
   # for more information on customization
-  # Access_token_methods :from_bearer_authorization, :from_access_token_param, :from_bearer_param
+  access_token_methods :from_bearer_authorization, :from_access_token_param, :from_bearer_param
 
   # Change the native redirect uri for client apps
   # When clients register with the following redirect uri, they won't be redirected to any server and the authorization code will be displayed within the provider
