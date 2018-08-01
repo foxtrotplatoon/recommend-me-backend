@@ -7,5 +7,9 @@ Rails.application.routes.draw do
                registrations: 'users/registrations',
              }, skip: [:sessions, :password], defaults: { format: :json }
 
+  namespace :api do
+    get 'users/sync', to: 'users#sync'
+  end
+
   resources :reccs, :ratings, :comments
 end

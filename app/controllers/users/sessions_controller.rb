@@ -2,16 +2,25 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+   super
+  end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    super
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome back!"
+      redirect_to root_path
+    else
+      flash[:warning] = "You have entered incorrect email and/or password."
+      render :new
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
