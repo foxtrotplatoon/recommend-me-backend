@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :reccs
   has_many :ratings
   has_many :comments
+  has_many :proposals, :through => :suggestions
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_193008) do
+ActiveRecord::Schema.define(version: 2018_08_02_142108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 2018_07_30_193008) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reccs_on_user_id"
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.string "suggestion_comment"
+    t.boolean "rejected", default: false
+    t.bigint "user_id"
+    t.bigint "recc_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recc_id"], name: "index_suggestions_on_recc_id"
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

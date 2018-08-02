@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'users/sync', to: 'users#sync'
+    resources :reccs, :ratings, :comments
   end
 
-  resources :reccs, :ratings, :comments
 end
