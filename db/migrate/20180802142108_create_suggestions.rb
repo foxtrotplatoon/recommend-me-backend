@@ -4,8 +4,8 @@ class CreateSuggestions < ActiveRecord::Migration[5.2]
       t.string :suggestion_comment
       t.boolean :rejected, default: false
 
-      t.belongs_to :user, index: true
-      t.belongs_to :recc, index: true
+      t.integer :recipient_id
+      t.integer :recc_id
 
       t.timestamps
     end

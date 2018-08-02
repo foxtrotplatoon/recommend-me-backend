@@ -12,6 +12,8 @@ User.create!(first_name: 'testgirl', last_name: 'testington', birthdate: "01/03/
 
 Recc.create!(name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: User.find(1))
 
+Suggestion.create!(suggestion_comment: "Check out this tree", recipient: User.find(2), recc: Recc.find(1))
+
 Rating.create!(score: 5, user: User.find(2), recc_id: Recc.find(1).id)
 
 Comment.create!(comment_text: "Wow, cool tree!", user: User.find(2), recc_id: Recc.find(1).id)
