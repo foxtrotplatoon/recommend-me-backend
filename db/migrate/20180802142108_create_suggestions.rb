@@ -5,7 +5,7 @@ class CreateSuggestions < ActiveRecord::Migration[5.2]
       t.boolean :rejected, default: false
 
       t.integer :recipient_id
-      t.integer :recc_id
+      t.integer :proposal_id
 
       t.timestamps
     end

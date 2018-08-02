@@ -7,6 +7,6 @@ class Recc < ApplicationRecord
 
   belongs_to :owner, class_name: :User, foreign_key: "user_id"
 
-  has_many :suggestions, foreign_key: 'recc_id'
+  has_many :suggestions, foreign_key: 'proposal_id'
   has_many :recipients, through: :suggestions
 end

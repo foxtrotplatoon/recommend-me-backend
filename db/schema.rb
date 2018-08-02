@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_142108) do
     t.string "suggestion_comment"
     t.boolean "rejected", default: false
     t.integer "recipient_id"
-    t.integer "recc_id"
+    t.integer "proposal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
