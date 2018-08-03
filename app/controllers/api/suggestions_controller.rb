@@ -22,6 +22,6 @@ class Api::SuggestionsController < ApiController
   private
 
   def suggestion_params
-    params.require(:suggestion).permit(:suggestion_comment, :recipient, :proposal)
+    params.require(:suggestion).permit(:id, :suggestion_comment, :recipient_id, :proposal_id)
   end
 end

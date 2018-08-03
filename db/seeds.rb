@@ -12,9 +12,25 @@ User.create!(first_name: 'testgirl', last_name: 'testington', birthdate: "01/03/
 
 Recc.create!(name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", owner: User.find(1))
 
+Recc.create!(name: "Tall Tower", description: "Anyone else notice this big tower here?", location: "Willis Tower", owner: User.find(2))
+
+Recc.create!(name: "Fun Place", description: "This place is great!", location: "Navy Pier", owner: User.find(2))
+
 Suggestion.create!(suggestion_comment: "Check out this tree", recipient: User.find(2), proposal: Recc.find(1))
+
+Suggestion.create!(suggestion_comment: "Check out this tall tower!", recipient: User.find(1), proposal: Recc.find(2))
+
+Suggestion.create!(suggestion_comment: "Wow what a fun place", recipient: User.find(1), proposal: Recc.find(3))
 
 Rating.create!(score: 5, user: User.find(2), recc_id: Recc.find(1).id)
 
+Rating.create!(score: 0, user: User.find(1), recc_id: Recc.find(2).id)
+
+Rating.create!(score: 3, user: User.find(1), recc_id: Recc.find(3).id)
+
 Comment.create!(comment_text: "Wow, cool tree!", user: User.find(2), recc_id: Recc.find(1).id)
+
+Comment.create(comment_text: "I already knew about this", user: User.find(1), recc_id: Recc.find(2).id)
+
+Comment.create(comment_text: "It was okay", user: User.find(1), recc_id: Recc.find(3).id)
 
