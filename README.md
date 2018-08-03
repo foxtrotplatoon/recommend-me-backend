@@ -42,6 +42,25 @@ scopes<br>
 
 You will want to use the resource_owner_id to check the user.id, and you will use the auth token for validation.
 
+# ROUTES #
+
+Here is what the routes look like for each resource:
+
+POST /api/reccs(.:format)	
+api/reccs#create
+
+GET	/api/reccs/:id(.:format)	
+api/reccs#show
+
+PATCH /api/reccs/:id(.:format)	
+api/reccs#update
+
+PUT	/api/reccs/:id(.:format)	
+api/reccs#update
+
+DELETE	/api/reccs/:id(.:format)	
+api/reccs#destroy
+
 # SCHEMA AND PSQL TABLES #
 
 Coming soon....
