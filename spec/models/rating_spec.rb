@@ -38,5 +38,5 @@ RSpec.describe Rating, type: :model do
     it "fails when the score is below 0" do
       expect { Rating.create! bad_rating_params_below_zero }.to raise_error(ActiveRecord::RecordInvalid)
     end
-    end
+  end
 end
