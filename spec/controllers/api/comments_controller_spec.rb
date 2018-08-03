@@ -17,6 +17,10 @@ RSpec.describe Api::CommentsController, type: :controller do
     { comment_text: '', user_id: user.id, recc_id: recc.id }
   }
 
+  let (:new_comment_params) {
+    { comment_text: 'NEW TEXT', user_id: user.id, recc_id: recc.id }
+  }
+
   describe "GET #show" do
     let(:token) { double :acceptable? => true }
     before do
@@ -52,6 +56,36 @@ RSpec.describe Api::CommentsController, type: :controller do
       expect {
         post :create, params: { comment: bad_comment_params }
       }.to change(Comment, :count).by(0)
+    end
+  end
+
+  describe 'PUT #update' do
+    let(:token) { double :acceptable? => true }
+    before do
+      allow(controller).to receive_message_chain(:doorkeeper_token).and_return(token)
+    end
+
+    it 'updates the requested comment' do
+      comment = Comment.create! valid_comment_params
+
+      put :update, params: {id: comment.to_param, comment: new_comment_params}
+
+      comment.reload
+      expect(comment.comment_text).to eq('NEW TEXT')
+    end
+  end
+
+  describe 'POST #destroy' do
+    let(:token) { double :acceptable? => true }
+    before do
+      allow(controller).to receive_message_chain(:doorkeeper_token).and_return(token)
+    end
+
+    it 'destroys the comment' do
+      comment = Comment.create! valid_comment_params
+      expect {
+        delete :destroy, params: {id: comment.to_param}
+      }.to change(Comment, :count).by(-1)
     end
   end
 end

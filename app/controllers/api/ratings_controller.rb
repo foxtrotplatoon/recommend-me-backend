@@ -22,6 +22,6 @@ class Api::RatingsController < ApiController
   private
 
   def rating_params
-    params.require(:rating).permit(:score, :user_id, :recc_id)
+    params.require(:rating).permit(:id, :score, :user_id, :recc_id)
   end
 end
