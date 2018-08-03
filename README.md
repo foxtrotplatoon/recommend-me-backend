@@ -61,6 +61,9 @@ api/reccs#update
 DELETE	/api/reccs/:id(.:format)<br>	
 api/reccs#destroy
 
+
+The first entry is the route (format is always json) and the second entry is what the controller is calling
+
 # SCHEMA AND PSQL TABLES #
 
 Coming soon....
