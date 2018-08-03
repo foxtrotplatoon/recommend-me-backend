@@ -46,19 +46,19 @@ You will want to use the resource_owner_id to check the user.id, and you will us
 
 Here is what the routes look like for each resource:
 
-POST /api/reccs(.:format)	
+POST /api/reccs(.:format)<br>
 api/reccs#create
 
-GET	/api/reccs/:id(.:format)	
+GET	/api/reccs/:id(.:format)<br>	
 api/reccs#show
 
-PATCH /api/reccs/:id(.:format)	
+PATCH /api/reccs/:id(.:format)<br>
 api/reccs#update
 
-PUT	/api/reccs/:id(.:format)	
+PUT	/api/reccs/:id(.:format)<br>
 api/reccs#update
 
-DELETE	/api/reccs/:id(.:format)	
+DELETE	/api/reccs/:id(.:format)<br>	
 api/reccs#destroy
 
 # SCHEMA AND PSQL TABLES #
