@@ -7,6 +7,10 @@ RSpec.describe Api::ReccsController, type: :controller do
     { name: "Weird Tree", description: "Come check out this weird tree", location: "41.879591, -87.650078", user_id: user.id }
   }
 
+  let (:bad_recc_params) {
+    { name: "", description: "", location: "", user_id: user.id}
+  }
+
   describe 'POST #create' do
     let(:token) { double :acceptable? => true }
     before do
@@ -17,6 +21,12 @@ RSpec.describe Api::ReccsController, type: :controller do
       expect {
         post :create, params: { recc: valid_recc_params }
       }.to change(Recc, :count).by(1)
+    end
+
+    it 'fails to create a new recc with invalid params' do
+      expect {
+        post :create, params: { recc: bad_recc_params }
+      }.to change(Recc, :count).by(0)
     end
   end
 end
