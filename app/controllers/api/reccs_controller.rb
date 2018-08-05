@@ -20,7 +20,7 @@ class Api::ReccsController < ApiController
   end
 
   def sync_comments
-    recc = Recc.find(params[:id]).comments
+    recc = Recc.find(params[:id])
     render json: {
              recc_comments: recc.comments
            }, status: 200
