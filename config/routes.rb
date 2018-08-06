@@ -13,5 +13,4 @@ Rails.application.routes.draw do
     get 'reccs/:id/sync_comments/', to: 'reccs#sync_comments'
     resources :reccs, :ratings, :comments, :suggestions, only: [:show, :create, :destroy, :update]
   end
-
 end
