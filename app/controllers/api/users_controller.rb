@@ -12,12 +12,23 @@ class Api::UsersController < ApiController
       return recc_array
     end
 
+    def load_proposal_and_comments
+      proposal_array = []
+      current_resource_owner.proposals.each do |proposal|
+        mini_proposal_array = []
+        mini_proposal_array.push(proposal)
+        mini_proposal_array.push(Recc.find(proposal.id).comments)
+        proposal_array.push(mini_proposal_array)
+      end
+      return proposal_array
+    end
+
     render json: {
              user_data: current_resource_owner,
              user_reccs: load_recc_and_comments,
              user_ratings: current_resource_owner.ratings,
              user_comments: current_resource_owner.comments,
-             user_proposals: current_resource_owner.proposals
+             user_proposals: load_proposal_and_comments
            }, status: 200
   end
 
