@@ -1,9 +1,20 @@
 class Api::UsersController < ApiController
   
   def sync
+    def load_recc_and_comments
+      recc_array = []
+      current_resource_owner.reccs.each do |recc|
+        mini_recc_array = []
+        mini_recc_array.push(recc)
+        mini_recc_array.push(recc.comments)
+        recc_array.push(mini_recc_array)
+      end
+      return recc_array
+    end
+
     render json: {
              user_data: current_resource_owner,
-             user_reccs: current_resource_owner.reccs,
+             user_reccs: load_recc_and_comments,
              user_ratings: current_resource_owner.ratings,
              user_comments: current_resource_owner.comments,
              user_proposals: current_resource_owner.proposals
