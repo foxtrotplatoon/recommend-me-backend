@@ -25,6 +25,7 @@ class Api::UsersController < ApiController
 
     render json: {
              user_data: current_resource_owner,
+             user_data_all: User.all,
              user_reccs: load_recc_and_comments,
              user_ratings: current_resource_owner.ratings,
              user_comments: current_resource_owner.comments,
