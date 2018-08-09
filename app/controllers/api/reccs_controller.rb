@@ -29,6 +29,6 @@ class Api::ReccsController < ApiController
   private
 
   def recc_params
-    params.require(:recc).permit(:id, :name, :description, :location, :user_id)
+    params.require(:recc).permit(:id, :picture_key, :name, :description, :location, :user_id)
   end
 end
