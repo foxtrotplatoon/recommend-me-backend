@@ -4,6 +4,7 @@ class CreateReccs < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :description, null: false
       t.string :location
+      t.string :picture_key
 
       t.references :user, index: true
       t.timestamps
