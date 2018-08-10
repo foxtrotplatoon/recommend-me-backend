@@ -16,7 +16,7 @@ User.create!(first_name: 'Wotan', last_name: 'Bloodfist', birthdate: "01/05/2008
 
 Recc.create!(name: "Weird Tree in the Park", description: "Come check out this weird tree I found.", location: "41.879591, -87.650078", picture_key: "CmRaAAAAJoLqAWxOnHtR31ur-2f7eEFPjx3mQddTYy6tgOlsoFU-v53s_yX-oc28-35goNuLq48Mb7-3lW2Z98nwTzSof4hyAqClN7nNfi27Bu6kgW14vToBXRtA6EkMFMmS4YACEhBpvPDdThrZ-tal90Q2xJCSGhQ9oP65Shnm0i3WPJoMcTjnyfxY-A", owner: User.find(1))
 
-Recc.create!(name: "Tall Tower in Chicago", description: "Anyone else notice this big tower here?", location: "Willis Tower", picture_key: "CmRaAAAA9w_VWLbGTwxsiQwu5_MtpyCavahL00EYE1hn2Wpc8Oa7em9iOfx7urHQK50eo8Z8TncGUa_Xl0XpkTaHz_c95-gpLzHUWKYRlXvcBHmOQs6E4nbL7yzk8deXP0Sve-RxEhBrjTrpiPMVgHfbK4QpOtNQGhRZ8JmBAYxHS0x5TuQ9pQ4loikgZg", owner: User.find(2))
+Recc.create!(name: "Sears Tower", description: "Anyone else notice this big tower here?", location: "Willis Tower", picture_key: "CmRaAAAA9w_VWLbGTwxsiQwu5_MtpyCavahL00EYE1hn2Wpc8Oa7em9iOfx7urHQK50eo8Z8TncGUa_Xl0XpkTaHz_c95-gpLzHUWKYRlXvcBHmOQs6E4nbL7yzk8deXP0Sve-RxEhBrjTrpiPMVgHfbK4QpOtNQGhRZ8JmBAYxHS0x5TuQ9pQ4loikgZg", owner: User.find(2))
 
 Recc.create!(name: "Chicago Navy Pier", description: "This place is great! Treats, games, prizes, and a Ferris Wheel!", location: "Navy Pier", picture_key: "CmRaAAAAsfv8m5vbCC5--eZHVUIY0u4I69qXdU6JqhJc9Epne20aYkIRGvMy6WMPEi8_UGRqZwL6WSMm26x4TU72Bzx_dRSFyXhUV6rZzPZKdoYDa0ekpbqLIoQjmycjENpCq7GOEhBZW7i2xEK0YEE0nJp_X0yjGhTS0u6ZuJtz4gsqpRc5X9beWBIEIg", owner: User.find(2))
 
